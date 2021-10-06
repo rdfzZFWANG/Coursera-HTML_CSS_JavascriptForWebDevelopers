@@ -1,0 +1,53 @@
+h1 {
+	text-align: center;
+}
+.row {
+	width: 100%;
+}
+div > div {
+	position: relative;
+	float:  left;
+	border:  2px solid red;
+	background: yellow;
+	box-sizing: border-box;
+	margin: 1%;
+}
+div > div > div {
+	margin: 0%;
+	position: absolute;
+	padding: 1%;
+	top: 0;
+	right: 0;
+}
+.chicken {
+	background-color: purple;
+}
+.beef {
+	background-color: green;
+}
+.sushi {
+	background-color: blue;
+	color: white;
+}
+p {
+	margin: 5%;
+	margin-top: 10%;
+}
+@media (min-width: 992px) {
+	.col-lg {
+		width: 31%;
+	}
+}
+@media (min-width: 768px) and (max-width:  991px) {
+	.col-md {
+		width: 47%;
+	}
+	.col-md-end {
+		width: 96%;
+	}
+}
+@media (max-width:  767px) {
+	.col-sm {
+		width: 100%;
+	}
+}
