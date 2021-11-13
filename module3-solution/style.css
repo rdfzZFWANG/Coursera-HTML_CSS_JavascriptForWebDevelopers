@@ -1,0 +1,14 @@
+.nav-link {
+	text-align: center;
+	border: 2px;
+	margin-bottom: -1px;
+	border: 1px solid #0000FF;
+}
+.title {
+	text-align: center;
+}
+.food {
+	background-color: blanchedalmond;
+	width: 90%;
+	margin: 2% auto;
+}
