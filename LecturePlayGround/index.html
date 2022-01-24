@@ -8,10 +8,14 @@
   </head>
   <body ng-app="App">
     <h1>Hello World</h1>
-    <div ng-controller="MyFirstController">
+    <div ng-controller="Controller as ctrl">
       <div>{{name}}</div>
       <input type="text" ng-model="name" ng-blur="roll()">
-      <div>Output: {{change()}}</div>
+      <div>Output: {{ctrl.text}}</div>
+      <select ng-model="ctrl.select">
+        <option ng-repeat='item in postsList'>{{item}}</option>>
+      </select>
+      <button ng-click='ctrl.check()'>Check</button>
     </div>
   </body>
 </html>
