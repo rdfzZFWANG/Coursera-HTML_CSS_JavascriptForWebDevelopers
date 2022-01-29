@@ -1,0 +1,6 @@
+
+<div ng-repeat = 'item in $ctrl.list' class='text-center'>
+    <hr>
+    {{item.name}} {{item.short_name}}
+    <a ui-sref='items({short_name: item.short_name})'>See more</a>
+</div>
