@@ -35,6 +35,11 @@
             controller: 'ItemsController as ic',
             params: {
                 short_name:null
+            }, resolve: {
+                items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
+                
+                    return MenuDataService.getItemsForCategory($stateParams.short_name);
+                  }]
             }
         })
     };
