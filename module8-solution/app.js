@@ -32,10 +32,14 @@
         const ctrl = this;
         ctrl.found = null;
         ctrl.getMatchedMenuItems = function (searchItem) {
-            service.getMatchedMenuItems(searchItem).then(function (res) {
-                console.log(res);
-                ctrl.found = res;
-            });
+            if (searchItem) {
+                service.getMatchedMenuItems(searchItem).then(function (res) {
+                    console.log(res);
+                    ctrl.found = res;
+                });
+            } else {
+                ctrl.found = [];
+            }  
         };
         ctrl.removeItem = function (index) {
             console.log('removing');

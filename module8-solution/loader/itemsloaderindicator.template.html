@@ -1,11 +1,12 @@
-<div>
-    <ul>
-        <li ng-repeat = 'item in foundItems'>
-            <hr>
-            <div>
-                {{item}}
-            </div>
-            <button class='btn btn-primary col-12' ng-click='onRemove({index: $index})'>Don't want this</button>
-        </li>
-    </ul>
+
+<div class="text-center">
+    <div ng-repeat = 'item in foundItems'>
+        <hr>
+        <div>
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
+        </div>
+        <button class='btn btn-primary col-12' ng-click='onRemove({index: $index})'>Don't want this</button>
+    </div>
 </div>
+
