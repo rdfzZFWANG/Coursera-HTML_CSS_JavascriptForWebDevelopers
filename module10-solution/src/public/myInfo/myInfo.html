@@ -1,13 +1,25 @@
 <h1 class="text-center">My Info</h1>
 <div class="text-center" ng-if="$ctrl.isSignUp">
-    User Info
     First name: {{$ctrl.info.firstName}} <br>
     Last name: {{$ctrl.info.lastName}} <br>
     Email: {{$ctrl.info.email}} <br>
     Phone number: {{$ctrl.info.phone}} <br>
     <h2 class="text-center">My favorite</h2>
-    <menu-item menu-item="$ctrl.info.dish"></menu-item>
+    <div>
+        <div class="row">
+            <div class="col-12">
+                <img width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuItem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+            </div>
+            <div>
+                <h3>{{$ctrl.menuItem.name}}</h3>
+                <p>{{$ctrl.menuItem.description}}</p>
+                <div>{{$ctrl.menuItem.price_small | currency}}<span> {{$ctrl.menuItem.small_portion_name}}</span> {{$ctrl.menuItem.price_large | currency}} <span>{{$ctrl.menuItem.large_portion_name}}</span></div>
+            </div>
+        </div>
+        <hr class="visible-xs">
+    </div>
 </div>
 <div class='text-center' ng-if="!$ctrl.isSignUp">
-    <h2><a ui-sref="public.signUp">Not Signed Up Yet. Sign up Now!</a></h2>
+    <h2><a ui-sref="public.signUp" style="color: #fff;">Not Signed Up Yet. Sign up Now!</a></h2>
 </div>
+

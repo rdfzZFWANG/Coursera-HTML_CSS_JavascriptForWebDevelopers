@@ -20,16 +20,14 @@
       $ctrl.saveInfo = function () {
           console.log('Getting');
           MenuService.getMenuItem($ctrl.user.shortName).then((res) => {
-            console.log(res);
             MenuService.setUserInfo($ctrl.user, res);
             $ctrl.displayError = false;
             $ctrl.displaySaved = true;
           }, (err) => {
-            console.log('Error');
-            console.log(err);
+            console.log('Error', err);
             $ctrl.displayError = true;
             $ctrl.displaySaved = false;
           })
-      };
+      };//pattern="(\d{3})-(\d{3})-(\d{4})"
     }
  })();

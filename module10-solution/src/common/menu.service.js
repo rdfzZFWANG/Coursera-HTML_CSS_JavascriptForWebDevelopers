@@ -43,7 +43,6 @@ function MenuService($http, ApiPath) {
   };
 
   service.setUserInfo = function (info, dish) {
-    console.log(info,dish);
     service.info.firstName = info.firstName;
     service.info.lastName = info.lastName;
     service.info.email = info.email;
@@ -53,7 +52,6 @@ function MenuService($http, ApiPath) {
   };
 
   service.getUserInfo = function () {
-    console.log(service.info);
     return service.info;
   };
 
