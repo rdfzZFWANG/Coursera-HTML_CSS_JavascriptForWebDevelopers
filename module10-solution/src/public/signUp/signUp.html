@@ -1,0 +1,73 @@
+<h1 class="text-center">Sign Up</h1>
+<p class="text-center">Sign up to receive the restaurant newsletter</p>
+<form class="text-center" name="form" novalidate>
+    <div style="margin-top:2%; color: #000;">
+        <input type="text" placeholder="First name"
+            ng-model="$ctrl.user.firstName"
+            name="firstName"
+            minlength="4" required>
+    </div>
+    <div>
+        <span ng-if="form.firstName.$error.required && 
+            form.firstName.$touched">
+            This is required
+        </span>
+    </div>
+    <div style="margin-top:2%; color: #000;">
+        <input type="text" placeholder="Last name"
+        ng-model="$ctrl.user.lastName"
+        name="lastName" required>
+    </div>
+    <div>
+        <span ng-if="form.lastName.$error.required && 
+            form.lastName.$touched">
+            This is required
+        </span>
+    </div>
+    <div style="margin-top:2%; color: #000;">
+        <input type="email" placeholder="Email address"
+        ng-model="$ctrl.user.email" name="email" required>
+    </div>
+    <div>
+        <span ng-if="form.email.$error.required && 
+            form.email.$touched">
+            This is required
+        </span>
+    </div>
+    <div style="margin-top:2%; color: #000;">
+        <input type="text" placeholder="Phone ###-###-####"
+        ng-model="$ctrl.user.phone" name="phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})" required>
+    </div>
+    <div>
+        <span ng-if="form.phone.$error.required && 
+            form.phone.$touched">
+            This is required
+        </span>
+        <span ng-if="form.phone.$invalid && 
+            form.phone.$touched && !form.phone.$error.required">
+            This is not a valid phone number
+        </span>
+    </div>
+    <div style="margin-top:2%; color: #000;">
+        <input type="text" placeholder="Favorite dish short name"
+        ng-model="$ctrl.user.shortName" name="dish" required>
+    </div>
+    <div>
+        <span ng-if="form.dish.$error.required && 
+            form.dish.$touched">
+            This is required
+        </span>
+    </div>
+    <button style="margin-top:2%; color: #000;"
+        ng-click="$ctrl.saveInfo()"
+        ng-disabled="form.$invalid">
+        Submit
+    </button>
+</form>
+<div ng-if="$ctrl.displayError">
+    <h2 class="text-center">No such menu number exists.</h2>
+</div>
+<div ng-if="$ctrl.displaySaved">
+    <h2 class="text-center">Your information has been saved.</h2>
+</div>
