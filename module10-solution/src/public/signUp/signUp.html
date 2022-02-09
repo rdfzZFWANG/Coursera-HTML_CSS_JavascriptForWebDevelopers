@@ -33,6 +33,10 @@
             form.email.$touched">
             This is required
         </span>
+        <span ng-if="form.email.$invalid && 
+            form.email.$touched && !form.email.$error.required">
+            This is not a valid email
+        </span>
     </div>
     <div style="margin-top:2%; color: #000;">
         <input type="text" placeholder="Phone ###-###-####"
